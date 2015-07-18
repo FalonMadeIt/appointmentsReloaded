@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>Appointments</title>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="js/pickadate.js-3.5.6/lib/compressed/themes/default.css" rel = "stylesheet">
+    <link href="js/pickadate.js-3.5.6/lib/compressed/themes/default.time.css" rel = "stylesheet">
+    <link href="js/pickadate.js-3.5.6/lib/compressed/themes/default.date.css" rel = "stylesheet">
+  </head>
+  
+  <body>
+    <header>
+      <a href="#all-appts"><i class="icon-calendar"></i></a>
+      <h1 class="page-title">Appointments</h1>
+      <a href="#new"><i class="icon-plus"></i></a>
+    </header>
+    
+    <div class="main-content">
+      <h1>Loading...</h1>
+    </div>
+    
+  <script type = 'text/template' id = 'all-appts'>
+    <% m.forEach(function(appt,i) {  %>
+    <ul class = "list">
+      <li class = "title"> <a href = "#detail/<%- i %>"><%- appt.title %> </a> </li>
+      <li class = "date"><%- appt.date %></li>
+      <li class = "time"><%- appt.time %></li>
+      <li class = "street"><%- appt.street %></li>
+      <li class = "city"><%- appt.city %></li>
+      <li class = "state"><%- appt.state %></li>
+    </ul>
+    <% }) %>
+  </script>
+
+  <script type = 'text/template' id = 'details'>
+    <h1> This is a test.<h1>
+  </script>
+
+<script type='text/template' id = 'create-appt'>
+    <form class = "new-appt" action = "" method = "post">
+        <label>Title</label>
+          <input type="text" class="title">
+        <label>Date</label>
+          <input type="text" class="date">
+        <label>Time</label>
+          <input type="text" class="time">
+        <label>Street</label>
+          <input type="text" class="street">
+        <label>City</label>
+          <input type="text" class="city">
+        <label>State</label>
+          <input type="text" class="state">
+  
+        <button type="submit" name="button" class="save">Save</button>
+   </form>
+</script>
+
+    
+    <!--<script type=' text/template' id="detail">
+      <div class="container">
+        <% m.forEach(function(appt,i) {  %>
+          <ul class = "list">
+            <li class = "title"> <a href = "#detail/<%- i %>"><%- appt.title %> </a> </li>
+            <li class = "date"><%- appt.date %></li>
+            <li class = "time"><%- appt.time %></li>
+          <div class="address">
+              <li class = "street"><%- appt.street %></li>
+              <li class = "city"><%- appt.city %></li>
+              <li class = "state"><%- appt.state %></li>
+            </div>
+          </ul>
+        <% }) %>
+      </div>
+    </script> 
+  -->
+    <script src="js/jquery.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
+    <script src = "js/pickadate.js-3.5.6/lib/picker.js"></script>
+    <script src = "js/pickadate.js-3.5.6/lib/picker.date.js"></script>
+    <script src = "js/pickadate.js-3.5.6/lib/picker.time.js"></script>
+    <script src="js/views/home.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+  </body>
+
+</html>
